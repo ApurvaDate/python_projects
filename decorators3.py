@@ -100,6 +100,11 @@ long_time()
 
 #we want to check how well it performs'
 #so now we have this performance decorator which we can use, to measure performance of my function 
-#wwe can also optimize functions
+#we can also optimize functions
 
 #this performance decorator depends on your machine, 
+
+
+#why do we need decorators?
+
+
