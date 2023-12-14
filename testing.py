@@ -1,8 +1,11 @@
 #Unit testing in python
 
-def do_stuff(number):
+def do_stuff(number=0):  # we can give default parameter as =0
     try:
-        return int(number) + 5
+        if number:
+            return int(number) + 5
+        else:
+            return '_please enter a number'
     except ValueError as err:
         return err
 
