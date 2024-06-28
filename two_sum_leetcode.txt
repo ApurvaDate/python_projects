@@ -1,0 +1,78 @@
+Two sum problem 
+
+
+#logic 
+1. Two Sum 
+
+
+
+problem : 
+
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order.
+
+
+Example 1:
+
+Input: nums = [2,7,11,15], target = 9 Output: [0,1] Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+
+
+nums = [1,2,5]
+target = 7
+
+#loop through array
+#index of array starts from 0 so it will be 0,1,2
+
+we try:
+
+index 0 + index 1 = target?
+index 0 + index 2 = target?
+
+etc till we get the desired outcome
+
+#but this will work only for short array, and for long array it will take too much of time
+
+#consider dictionary
+
+Nums = [1,2,5]
+
+t = 7
+
+#we are going to take value and its index and store it in a dictionary
+
+d = [1,0] #once we store this value in a dictionary we want to calculate its complement for this values
+
+c = target - Num = 7-1 = 6
+#we now take this 6 value and look up in the dictionary if we have seen this value, if it is not present we go to the next value
+
+d = [1,0], [2,1]
+
+7-2 = 5 #this value 
+
+d [1,0], [2,1], [5,2]
+
+7-5 = 2 #we have seen this 2 before in the dictionary with its index value
+
+output = [1,2]
+
+
+#code 
+
+
+def twoSum(nums,target):
+        num_dict ={}
+        for i, num in enumerate(nums):
+            complement = target - num
+
+            if complement in num_dict:
+                return [num_dict[complement],i] #return the two indexes of the values
+            num_dict[num] = i
+        return []
+
+
+
+
+
