@@ -1,0 +1,36 @@
+################## longest substring without repeting characters #############################
+
+
+
+#In the string while moving forward we will check whether that value is present before or not
+
+
+abcabcbb
+
+#if we see a for the first time we add 1, then b for the first time add 1, c for the first time then add 1 to my length, 
+#now if we see a again , so as we start moving forward we will track the starting point and the index we are at
+#so whenever we encouter something which we ahve seen it before we will increase the starting point by 1, so the starting point becomes becomes
+#this is what called sliding window technique
+
+#we will use dictionary for checking whether this character is in the dictionary or not
+
+i = index
+start = start point
++1 = we are considering range
+
+
+
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        if len(s) == 0:
+            return 0
+        map = {}  #define a dictionary
+        max_length = start = 0 #take two variables max length & start
+
+        for i in range(len(s)):
+            if s[i] in map and start<= map[s[i]]:
+                start = map[s[i]]+1
+            else:
+                max_length = max(max_length, i-start+1)
+            map[s[i]] = i
+        return (max_length)
